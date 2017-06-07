@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['10.20.23.117','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'myonline',
 ]
 
 MIDDLEWARE = [
@@ -134,8 +136,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = (
-#     'D://static/',
-#     # os.path.join(BASE_DIR, "static"),
-#     # '/var/www/static/',
-# )
+STATICFILES_DIRS = (
+    # 'D://static/',
+     os.path.join(BASE_DIR, "myonline/templates"),
+    # '/var/www/static/',
+)
