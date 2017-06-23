@@ -6,11 +6,15 @@ from django.urls import reverse
 from django.utils import timezone
 
 # Create your views here.
-
 def index(request):
     latest_question_list = Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
+
+def testpage(request):
+    latest_question_list = Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/testpage.html', context)
 
 def detail(request,question_id):
     question = get_object_or_404(Question, pk=question_id)
